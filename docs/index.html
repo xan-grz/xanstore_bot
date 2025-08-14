@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>GameShop — мини‑апп</title>
+  <meta name="description" content="Продажа цифровых товаров: гемы, боевые пропуски, UC и другое.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="icon.svg">
+</head>
+<body>
+  <header class="app-header">
+    <div class="left">
+      <img src="icon.svg" alt="" class="logo">
+      <div class="titles">
+        <h1>GameShop</h1>
+        <span class="subtitle">mini app</span>
+      </div>
+    </div>
+    <div class="right">
+      <button class="icon-btn" id="searchBtn" aria-label="Поиск" title="Поиск">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+          <path d="M15.5 14h-.79l-.28-.27a6.471 6.471 0 0 0 1.57-4.23C15.99 6.01 13.98 4 11.5 4S7.01 6.01 7.01 9.5 9.02 15 11.5 15c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0s.41-1.08 0-1.49L15.5 14zM11.5 13C9.57 13 8 11.43 8 9.5S9.57 6 11.5 6 15 7.57 15 9.5 13.43 13 11.5 13z"/>
+        </svg>
+      </button>
+      <button class="icon-btn" id="profileBtn" aria-label="Профиль" title="Профиль">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+          <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="app">
+    <section class="row apps">
+      <div class="row-title">
+        <h2>Игры</h2>
+        <a class="see-all" href="#" id="seeAllGames">Смотреть все</a>
+      </div>
+      <div class="app-icons" id="gamesStrip">
+        <!-- Иконки игр рендерятся скриптом -->
+      </div>
+    </section>
+
+    <section class="row promos">
+      <div class="row-title">
+        <h2>Акции и скидки</h2>
+      </div>
+      <div class="cards" id="promoCards"></div>
+    </section>
+
+    <section class="row new">
+      <div class="row-title">
+        <h2>Новинки</h2>
+      </div>
+      <div class="cards" id="newCards"></div>
+    </section>
+  </main>
+
+  <div class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-head">
+      <h3>Корзина</h3>
+      <button class="icon-btn" id="closeCart" aria-label="Закрыть корзину">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+          <path d="M18.3 5.71L12 12.01l-6.3-6.3-1.41 1.41 6.29 6.3-6.3 6.29 1.42 1.42 6.3-6.29 6.29 6.29 1.41-1.41-6.29-6.3 6.29-6.29z"/>
+        </svg>
+      </button>
+    </div>
+    <div class="cart-body" id="cartItems"></div>
+    <div class="cart-foot">
+      <div class="totals">
+        <span>Итого:</span>
+        <strong id="cartTotal">0 ₽</strong>
+      </div>
+      <button id="checkoutBtn" class="primary">Перейти к оплате</button>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
